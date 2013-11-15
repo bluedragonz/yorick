@@ -7,6 +7,18 @@ app.configure(function(){
 
 var port = 3333;
 
+var pub = __dirname + '/public';
+app.use(app.router);
+app.use(express.static(pub));
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.set('view options', {layout: false});
+
+app.configure(function(){
+  app.use(express.static(__dirname + '/'));
+});
+
 app.use(express.cookieParser());
 app.use(express.session({secret: 'secret', key: 'express.sid'}));
 

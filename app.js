@@ -12,7 +12,7 @@ app.use(app.router);
 app.use(express.static(pub));
 
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('view engine', '');
 app.set('view options', {layout: false});
 
 app.configure(function(){
